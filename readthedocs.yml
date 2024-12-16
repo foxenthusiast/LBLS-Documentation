@@ -1,0 +1,27 @@
+version: 2
+
+# Build settings
+build:
+  os: ubuntu-22.04  # OS environment
+  tools:
+    python: "3.8"  # Python version to use
+  image: "python:3.8"  # Docker image for the build
+
+# Python dependencies to install
+python:
+  install:
+    - requirements: ./requirements.txt  # Install dependencies from the requirements.txt file
+
+# Sphinx configuration
+sphinx:
+  configuration: docs/source/conf.py  # Path to your Sphinx config file
+  build_dir: _build  # The directory where Sphinx will build the docs
+
+# Documentation settings
+formats:
+  - html  # Build HTML output
+  - pdf   # Optionally build PDF (requires additional setup)
+
+# Extra build settings
+extra_requirements:
+  - sphinx_rtd_theme  # Ensure the RTD theme is installed for your docs
